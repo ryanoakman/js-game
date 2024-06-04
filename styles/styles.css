@@ -1,0 +1,19 @@
+.game-container {
+  width: 80rem;
+  height: 40rem;
+  background-color: #afafaf;
+  margin: 0 auto;
+}
+
+.worm {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #000;
+  translate: 6rem 20rem;
+}
+
+.food {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #fff;
+}
