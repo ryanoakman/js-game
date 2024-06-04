@@ -1,8 +1,19 @@
 .game-container {
-  width: 80rem;
-  height: 40rem;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   background-color: #afafaf;
   margin: 0 auto;
+}
+
+.new-game-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid;
+  padding: 3rem;
+  display: block;
 }
 
 .worm {
