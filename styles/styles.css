@@ -1,31 +1,96 @@
-.game-container {
-  position: relative;
-  width: 100vw;
+body {
+  background-image: url("/images/homer-bg-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  background-color: #afafaf;
-  margin: 0 auto;
+  flex-direction: column;
 }
 
-.new-game-modal {
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(40, 1.75rem);
+  grid-template-rows: repeat(25, 1.75rem);
+  /* border: #434f46 solid 0.25rem; */
+  background-color: #434f46;
+}
+
+#instructions,
+#game-over-wall,
+#game-over-homer {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 5px solid;
+  top: 20%;
+  /* border: #4d4d4d solid 0.25rem; */
   padding: 3rem;
-  display: block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 
-.worm {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: #000;
-  translate: 6rem 20rem;
+#start-game-btn,
+#play-again-btn-self,
+#play-again-btn-wall {
+  padding: 1rem;
+  background-color: #ffdf00;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+.doh {
+  font-size: 4rem;
+}
+
+#game-over-wall,
+#game-over-homer {
+  visibility: hidden;
+}
+
+.homer-start-game,
+.homer-head,
+.homer-wall {
+  width: 12.5rem;
+}
+
+#game-over-homer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.homer-head {
+  width: 12.5rem;
+}
+
+#game-over {
+  display: none;
+}
+
+.homer {
+  background-image: url("../images/homer-head.png");
+  /* height: 1.25rem;
+  width: 1.25rem; */
+  /* background-color: #ffff00; */
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .food {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: #fff;
-  translate: 60rem 19rem;
+  background-image: url("../images/donut.png");
+  /* height: 1.25rem;
+  width: 1.25rem; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* background-color: #ffc0cb; */
+}
+
+footer p {
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 0.5rem;
 }

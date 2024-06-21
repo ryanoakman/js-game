@@ -9,17 +9,47 @@
     <script defer src="scripts/script.js"></script>
   </head>
   <body>
-    <header></header>
-    <main>
-      <div class="game-container" id="game-container">
-        <div class="new-game-modal" id="new-game-modal">
-          <p>Please play to start a new game</p>
-          <button class="new-game" id="new-game">Start game</button>
-        </div>
-        <div class="worm" id="worm"></div>
-        <div class="food" id="food"></div>
+    <audio id="doh" src="media/doh.mp3" type="audio/mp3"></audio>
+    <audio id="donut" src="media/homer-donut.mp3" type="audio/mp3"></audio>
+    <div class="game-board" id="game-board"></div>
+    <div id="instructions">
+      <img class="homer-start-game" src="images/homer-start-game.png" alt="" />
+      <h1>Homer's hungry! Help him eat!</h1>
+      <p>
+        Eat the donuts to fill Homer, but be careful to not eat the wall or
+        yourself!
+      </p>
+      <button id="start-game-btn">Start Game</button>
+    </div>
+    <div id="game-over-wall">
+      <img class="homer-wall" src="images/homer-wall-game-over.png" alt="" />
+      <h1 class="doh">Doh!</h1>
+      <p>You ran into the wall!</p>
+      <p>Want to play again?</p>
+      <button id="play-again-btn-wall">Start Game</button>
+    </div>
+    <div id="game-over-homer">
+      <img class="homer-head" src="images/donut-head-homer.webp" alt="" />
+      <div>
+        <h1 class="doh">Doh!</h1>
+        <p>Eat the donuts, not yourself!</p>
+        <p>Want to play again?</p>
+        <button id="play-again-btn-self">Start Game</button>
       </div>
-    </main>
-    <footer></footer>
+    </div>
+    <footer>
+      <p>For educational use only</p>
+      <p>
+        References:
+        <a href="https://www.youtube.com/watch?v=uyhzCBEGaBY">FreeCodeCamp</a> |
+        Audio files:
+        <a href="https://www.thesoundarchive.com/simpsons.asp">Doh!</a>,
+        <a
+          href="https://tuna.voicemod.net/sound/bfc5adfb-57a7-4606-bfd7-c8d5bb1838f4"
+          >Donuts</a
+        >
+        | Images: Google Image Search
+      </p>
+    </footer>
   </body>
 </html>
