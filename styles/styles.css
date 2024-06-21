@@ -14,7 +14,6 @@ body {
   display: grid;
   grid-template-columns: repeat(40, 1.75rem);
   grid-template-rows: repeat(25, 1.75rem);
-  /* border: #434f46 solid 0.25rem; */
   background-color: #434f46;
 }
 
@@ -23,7 +22,6 @@ body {
 #game-over-homer {
   position: absolute;
   top: 20%;
-  /* border: #4d4d4d solid 0.25rem; */
   padding: 3rem;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -71,22 +69,31 @@ p {
   display: none;
 }
 
-.homer {
-  background-image: url("../images/homer-head.png");
-  /* height: 1.25rem;
-  width: 1.25rem; */
-  /* background-color: #ffff00; */
+.homer-right {
+  background-image: url("../images/homer-head-right.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.homer-up {
+  background-image: url("../images/homer-head-up.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.homer-down {
+  background-image: url("../images/homer-head-down.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.homer-left {
+  background-image: url("../images/homer-head-left.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .food {
   background-image: url("../images/donut.png");
-  /* height: 1.25rem;
-  width: 1.25rem; */
   background-size: contain;
   background-repeat: no-repeat;
-  /* background-color: #ffc0cb; */
 }
 
 footer p {

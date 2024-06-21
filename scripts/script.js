@@ -14,7 +14,7 @@ const donutAudio = document.getElementById("donut");
 // Define game variables
 const gridSizeX = 40;
 const gridSizeY = 25;
-let homer = [{x: 10, y: 10}];
+let homer = [{x: 10, y: 10, direction: "right"}];
 let food = randomFood();
 let direction = "right";
 let gameSpeed = 150;
@@ -31,15 +31,58 @@ function draw() {
 
 // Draw Homer on the gameboard
 function drawHomer() {
-  homer.forEach((segment) => {
+  homer.forEach((segment, index) => {
     // create a div for Homer
-    const homerElem = createGameElement("div", "homer");
+
+    let homerClass = "homer-right";
+
+    // if index 0 // head logic
+    if (index === 0) {
+      switch (segment.direction) {
+        // switch direction
+        // up className = homer-up
+        case "up":
+          homerClass = "homer-up";
+          break;
+        case "down":
+          homerClass = "homer-down";
+          break;
+        case "left":
+          homerClass = "homer-left";
+          break;
+        default:
+          homerClass = "homer-right";
+          break;
+      }
+    } else {
+      // else , tail logic (follow the head)
+      switch (segment.direction) {
+        // switch direction
+        // up className = homer-up
+        case "up":
+          homerClass = "homer-up";
+          break;
+        case "down":
+          homerClass = "homer-down";
+          break;
+        case "left":
+          homerClass = "homer-left";
+          break;
+        default:
+          homerClass = "homer-right";
+          break;
+      }
+    }
+
+    let homerElem = createGameElement("div", homerClass);
     // set Homer's position on the game board
     setPosition(homerElem, segment);
     // add Homer to the game board
     gameBoard.appendChild(homerElem);
   });
 }
+
+//if index 0, it's head, else different direction
 
 // create an element as a div
 function createGameElement(tag, className) {
@@ -88,6 +131,9 @@ function move() {
       homerHead.x++;
       break;
   }
+
+  homerHead.direction = direction;
+
   if (
     homerHead.x < 1 ||
     homerHead.x > gridSizeX ||
@@ -125,16 +171,16 @@ function move() {
 function keyPress(event) {
   switch (event.key) {
     case "ArrowUp":
-      direction = "up";
+      if (direction !== "down") direction = "up";
       break;
     case "ArrowRight":
-      direction = "right";
+      if (direction !== "left") direction = "right";
       break;
     case "ArrowDown":
-      direction = "down";
+      if (direction !== "up") direction = "down";
       break;
     case "ArrowLeft":
-      direction = "left";
+      if (direction !== "right") direction = "left";
       break;
   }
 }
@@ -171,7 +217,7 @@ function gameOver() {
 
 function gameReset() {
   // gameOver();
-  homer = [{x: 10, y: 10}];
+  homer = [{x: 10, y: 10, direction: "right"}];
   food = randomFood();
   direction = "right";
   gameSpeed = 150;
