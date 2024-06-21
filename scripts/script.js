@@ -171,16 +171,16 @@ function move() {
 function keyPress(event) {
   switch (event.key) {
     case "ArrowUp":
-      if (direction !== "down") direction = "up";
+      direction = "up";
       break;
     case "ArrowRight":
-      if (direction !== "left") direction = "right";
+      direction = "right";
       break;
     case "ArrowDown":
-      if (direction !== "up") direction = "down";
+      direction = "down";
       break;
     case "ArrowLeft":
-      if (direction !== "right") direction = "left";
+      direction = "left";
       break;
   }
 }
