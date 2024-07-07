@@ -36,11 +36,10 @@ function drawHomer() {
 
     let homerClass = "homer-right";
 
-    // if index 0 // head logic
+    // if index 0 // head logic - the first homer elem in the array is the head and leads the way, based on a set direction
     if (index === 0) {
       switch (segment.direction) {
         // switch direction
-        // up className = homer-up
         case "up":
           homerClass = "homer-up";
           break;
@@ -55,10 +54,9 @@ function drawHomer() {
           break;
       }
     } else {
-      // else , tail logic (follow the head)
+      // else , tail logic - follow the head
       switch (segment.direction) {
         // switch direction
-        // up className = homer-up
         case "up":
           homerClass = "homer-up";
           break;
@@ -82,9 +80,7 @@ function drawHomer() {
   });
 }
 
-//if index 0, it's head, else different direction
-
-// create an element as a div
+// create an element as a div - used for drawing homer and food
 function createGameElement(tag, className) {
   const element = document.createElement(tag);
   element.className = className;
@@ -134,6 +130,7 @@ function move() {
 
   homerHead.direction = direction;
 
+  // check to see if homer hits a wall
   if (
     homerHead.x < 1 ||
     homerHead.x > gridSizeX ||
@@ -145,6 +142,7 @@ function move() {
     return;
   }
 
+  // check to see if homer hits himself
   for (let i = 1; i < homer.length; i++) {
     if (homerHead.x === homer[i].x && homerHead.y === homer[i].y) {
       gameOverSelf.style.visibility = "visible";
